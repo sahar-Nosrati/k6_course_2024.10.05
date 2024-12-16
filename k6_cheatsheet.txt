@@ -1,0 +1,120 @@
+- non-funtional test -> security test, performance test, efficiency test, reliablity test, 
+- k6 -> an open-source, developer-friendly, and extensible load testing tool. It helps to prevent performance issues and proactively improve reliability.
+
+- k6 -> evaluation of the reliability and performance of your application and infrastructure
+- k6 -> helps engineering teams prevent errors and SLO breaches, enabling them to build resilient and high-performing applications that scale. 
+
+- usage k6 for ->
+  - Load and performance testing -> 
+    - optimization for minimal resource consumption and designed for running high-load performance tests such as spike, stress, or soak tests.
+  - Browser performance testing ->  by  k6 browser API -> performing of browser based performance testing -> collection of browser    metrics  -> identifying performance issues related to browsers
+  - Performance and synthetic monitoring 
+  - Automation of performance tests -> 
+    - integrates seamlessly with CI/CD and automation tools
+  - Chaos and resilience testing -> 
+    - simulation of the traffic as part of your chaos experiments
+
+
+- Spike test -> evaluation system functionality and its performance under  -> experience events of sudden and massive traffic.
+  - ticket sales (Taylor Swift), seasonal sales (Black Friday)
+
+- Spike testing increases to extremely high loads in a very short or non-existent ramp-up time. Usually, it has no plateau period or is very brief. In the same way, the ramp-down is very fast or non-existent, letting the process iterate only once.
+
+- Spike test -> when the system expects to receive a sudden rush of activity 
+- spike test consideration ->
+  - Focus on key processes
+  - The test often won’t finish.
+  - Run, tune, repeat.
+  - Monitor
+
+- Stress testing ->  Evaluation of how the system performs when loads are heavier than usual.
+- The load pattern of a stress test resembles that of an average-load test. -> differences ->
+  -  higher load ->
+    - longer ramp-up period 
+
+- stress test ->  verification of the stability and reliability of the system under conditions of heavy use
+- stress test ->  evaluation of the CPU, memory, network, or overall performance.
+- soak test -> is another variation of the Average-Load test -> extended periods -> analysis of -> 
+  - The system’s degradation of performance and resource consumption over extended periods.
+  - The system’s availability and stability during extended periods.
+- difference soak test and average-load test ->  in test duration ->
+  - in the soak test -> the peak load duration (usually an average amount) extends several hours and even days.
+
+- other name of the soak test -> endurance, constant high load, or stamina test
+- During soak test -> Most systems must stay turned on and keep working for days, weeks, and months without intervention.
+- Soak test checks -> 
+  - common performance defects that show only after extended use ->
+    - response time degradation
+    - memory or other resource leaks
+    - data saturation
+    - storage depletion
+
+- consideration soak test -> 
+  - Configure the duration to be considerably longer than any other test
+  - If possible, re-use the average-load test script
+  - Don’t run soak tests before running smoke and average-load tests.
+  - Monitor the backend resources and code efficiency
+
+- smoke test (shakeout tests) -> have a minimal load ->
+  - verification appropriate functionality of the system under the minimal load and collaborate with baseline performance
+
+- smoke test ->
+  - running tests with a few VUs
+  -  short period
+  -  low number of iterations or a duration from seconds to a few minutes maximum
+
+- Main reasons of the running smoke test ->
+  - verification test script
+  - Verify that your system doesn’t throw any errors (performance or system related) when under minimal load.
+  - relationship between baseline performance metrics of your system’s response under minimal load.
+  - With simple logic, to serve as a synthetic test to monitor the performance and availability of production environments.
+
+- considerations smoke test -> 
+  - Each time you create or update a script, run a smoke test
+  - Keep throughput small and duration short
+
+- Iteration -> an iteration refers to a single cycle or repetition of a process -> 
+  - In Load Testing:
+
+An iteration represents one complete execution of a test scenario by a virtual user (VU). For example, in a web application load test, an iteration might involve:
+
+    - A virtual user logging in,
+    - Performing a task (like submitting a form or loading a page),
+    - Logging out.
+
+- Average-load testing (day-in-life test or volume test) -> how the system performs under typical load ->
+  - simulate the number of concurrent users and requests per second that reflect average behaviors in the production environment
+
+- Average-load test -> Average-Load testing helps understand whether a system meets performance goals on a typical day (commonplace load). Typical day here means when an average number of users access the application at the same time, doing normal, average work.
+
+- Average-load test -> 
+  - Assess the performance of your system under a typical load.
+  - Identify early degradation signs during the ramp-up or full load periods.
+  - Assure that the system still meets the performance standards after system changes (code and infrastructure).
+
+
+- consideration Average-load test -> 
+  - Know the specific number of users and the typical throughput per process in the system.
+  - Gradually increase load to the target average.
+  - Maintain average for a period longer than the ramp up. 
+  - Consider a ramp-down period.
+
+- Breakpoint test -> knowing where and how a system starts to fail helps prepare for such limits. -> 
+  - A breakpoint ramps to unrealistically high numbers. This test commonly has to be stopped manually or automatically as thresholds start to fail. When these problems appear, the system has reached its limits.
+
+- when we need breakpoint test -> Teams execute a breakpoint test whenever they must know their system’s diverse limits
+  - The need to know if the system’s load expects to grow continuously
+  - If current resource consumption is considered high
+  - After significant changes to the code-base or infrastructure.
+
+- consideration of the breakpoint test ->
+  - Avoid breakpoint tests in elastic cloud environments.
+  - Increase the load gradually.
+  - System failure could mean different things to different teams
+    - Degraded performance. The response times increased, and user experience decreased.
+    - Timeouts. Processes are failing due to extremely high response times.
+    - Errors. The system starts responding with HTTP error codes.
+  - You can repeat this test several times
+  - Run breakpoints only when the system is known to perform under all other test types.
+
+- 

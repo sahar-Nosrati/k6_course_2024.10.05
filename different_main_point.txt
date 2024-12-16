@@ -1,0 +1,3 @@
+- ctl + alt + PgDn (down arrow key) -> select several lines in vs code 
+- infrastructure -> IT infrastructure is composed of physical and virtual resources that support the flow, storage, processing and analysis of data
+- for running a test -> k6 run script.js
